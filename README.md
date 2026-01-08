@@ -1,182 +1,144 @@
-Project Documentation
-Robotics
+🤖 Human Following Robot
 
-Human Following Robot using raspberry pi + Arduino
+Using Raspberry Pi + Arduino
 
-By – Subhatha Kaumud Senanayake
+Author: Subhatha Kaumud Senanayake
+Version: 1.0
 
+📌 Project Overview
 
+This project implements a Human Following Robot using Raspberry Pi and Arduino, integrating Computer Vision and Machine Learning to recognize and follow a specific person while avoiding obstacles.
 
-Version 1.0
+A USB camera is used for real-time human detection, and ultrasonic sensors help the robot detect and avoid obstacles in its path. The system is designed to understand the fundamentals of AI, Machine Learning, and Robotics integration.
 
+🎯 Project Objectives
 
+Build a robot capable of following a human using a USB camera
 
+Train a custom image classification model using personal images
 
+Implement obstacle avoidance using ultrasonic sensors
 
+Learn and apply AI & Machine Learning fundamentals
 
+Integrate Raspberry Pi and Arduino for real-time robotic control
 
+🧠 Technologies & Libraries
+🔍 Computer Vision
 
+OpenCV (Python) – Real-time image processing from live video feed
 
+🤖 Machine Learning
 
+TensorFlow – Custom image classification model training
 
+📊 Data Processing
 
+NumPy – Image array manipulation
 
+Matplotlib – Accuracy and result visualization
 
+🏷 Data Labeling
 
+LabelImg – Image annotation tool
+👉 https://github.com/HumanSignal/labelImg/releases
 
+📄 Documentation & Tools
 
+MS 365 – Project documentation
 
+GitHub – Code & documentation hosting
+👉 https://github.com/Subhatha/Robot
 
+Draw.io – System architecture & flow diagrams
 
+🏗 System Architecture
+🔧 Hardware Components
 
+Raspberry Pi 400
 
+Arduino Uno
 
+USB Camera
 
+Ultrasonic Sensor
 
+Motor Driver
 
+DC Motors & Wheels
 
+Robot Chassis
 
+Battery Pack
 
+⚙️ Software Architecture & Flow
 
+USB camera captures live video feed
 
+OpenCV processes frames in real time
 
+TensorFlow model classifies human position
 
+Decision logic determines robot movement
 
+Arduino controls motors based on commands
 
+Ultrasonic sensors detect obstacles and stop/avoid
 
-Description of the project 
+🖼 Image Classification Model
 
-This project is about making a Human recognition Robot using raspberry and Arduino while being able to avoid obstacles, the robot will use machine learning and computer vision to detect a certain human to follow, and ultrasonic sensors will help to avoid anything comes in.
+Input Size: 224 × 224 pixels
 
-Purpose of the project 
+Normalization: Applied
 
-To create a robot which can follow any object or a person using a USB camera
-To train a custom image model using personal images
-To avoid obstacles comes to it 
-To understand AI and Machine Learning fundamentals
+Total Images: 200
 
+Dataset Distribution:
 
-Libraries and Frameworks 
+Front: 50 images
 
-Computer Vision  
-Open CV (Python) – Handles the images using live video
+Back: 50 images
 
-Machine Learning 
-TensorFlow – Image model training (200) images 
+Left: 50 images
 
-Data Processing 
-NumPY and Matplotlib – Image array handling and Accuracy 
+Right: 50 images
 
-Data Labeling 
-LabelImg – to label images (free)
-https://github.com/HumanSignal/labelImg/releases
+Validation:
 
-Documentation 
-MS 365 for Documenting 
-Github – Document hosting and Code hosting 
-https://github.com/Subhatha/Robot
-Draw.io – Algorithms and structure making
- 
+20 randomly captured images
 
+80% Training / 20% Validation split for better accuracy
 
-Architecture 
+🚦 Human-Following Decisions
 
-Hardware Components 
+The model makes 5 classification decisions:
 
-•	Raspberry pi 400 (Given version from the lab)
-•	Arduino Uno
-•	USB Camera
-•	Ultrasonic sensor
-•	Motor driver 
-•	Dc Motors and wheels
-•	Chassy
-•	Battery pack
+Classification	Robot Action
+Person_Front	Move Forward
+Person_Left	Turn Left
+Person_Right	Turn Right
+Person_Back	Stop (not implemented yet)
+No_Person	Idle / Stop / Search (360° rotation)
+🚀 Future Improvements
 
+Integrate a Depth Camera for improved accuracy
 
+Enable 360° Field of View (FOV)
 
+Increase dataset size for better model performance
 
+Implement Person_Back behavior
 
-Software Architecture and the Flow 
+Improve obstacle avoidance logic
 
+📚 References
 
+TensorFlow Tutorials
+👉 https://www.tensorflow.org/tutorials
 
+OpenCV Python
+👉 https://pypi.org/project/opencv-python/
 
+📜 License
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Image Model 
-
-Resized to 224*224 normalized value pixels 
-
-•	200 images 
-•	Front  - 50
-•	Back – 50
-•	Left side – 50
-•	Right side – 50
-
-20 Validation images (random captured)
-
-Dataset split to 2 parts – 80% for training and 20% for validation for better accuracy.
-
-
-Human following Decisions 
-
-I made 5 Decisions for the model 
-
-•	Person_Front – Move Forward
-•	Person_Left – Turn Left
-•	Person_Right – Turn Right
-•	Person_Back – Stop (not implemented yet)
-•	No_Person – Idle/Stop/Search (can make a rotation 360 degrees until it detect a person
-
-
-Future Improvements
-
-•	Add a Depth camera for more accuracy
-•	360 Degrees of FOV
-•	Increase the Dataset size
-
-
-
-
-
-
-References
-
-
-https://www.tensorflow.org/tutorials
-https://pypi.org/project/opencv-python/
-
-<img width="451" height="684" alt="image" src="https://github.com/user-attachments/assets/7d7aa1ca-1575-4860-83c8-07597cd41f1a" />
+This project is developed for educational and experimental purposes.
